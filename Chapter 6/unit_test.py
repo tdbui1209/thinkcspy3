@@ -1,3 +1,5 @@
+import sys
+
 def test(did_pass):
     '''Print the result of a test.'''
     linenum = sys._getframe(1).f_lineno
