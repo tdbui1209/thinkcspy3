@@ -55,6 +55,33 @@ def days_in_month(name):
 def to_secs(hours, minutes, seconds):
     return int(hours * 3600 + minutes * 60 + seconds)
 
+# ex9.9
+def hours_in(seconds):
+    return seconds // 3600
+
+def minutes_in(seconds):
+    seconds = seconds % 3600
+    return seconds // 60
+
+def seconds_in(seconds):
+    seconds = seconds % 3600
+    seconds = seconds % 60
+    return seconds
+
+# ex9.11
+def compare(a, b):
+    if a > b:
+        return 1
+    elif a < b:
+        return -1
+    else:
+        return 0
+    
+# ex9.12
+def hypotenuse(a, b):
+    c = a**2 + b**2
+    return c ** (1/2)
+
 # ---------------------Unit test----------------------
 def test_suite():
     '''Run the suite of tests for code in this module (this file)'''
@@ -86,5 +113,16 @@ def test_suite():
     test(to_secs(0, -10, 10) == -590)
     test(to_secs(2.5, 0, 10.71) == 9010)
     test(to_secs(2.433,0,0) == 8758)
+    test(hours_in(9010) == 2)
+    test(minutes_in(9010) == 30)
+    test(seconds_in(9010) == 10)
+    test(compare(5, 4) == 1)
+    test(compare(7, 7) == 0)
+    test(compare(2, 3) == -1)
+    test(compare(42, 1) == 1)
+    test(hypotenuse(3, 4) == 5.0)
+    test(hypotenuse(12, 5) == 13.0)
+    test(hypotenuse(24, 7) == 25.0)
+    test(hypotenuse(9, 12) == 15.0)
     
 test_suite()
