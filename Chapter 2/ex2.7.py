@@ -1,4 +1,4 @@
-hours_per_day = 24
+hours_of_day = 24
 current_time = 14 # 2pm
 set_alarm = 5100
 go_off = (current_time + set_alarm) % hours_per_day
