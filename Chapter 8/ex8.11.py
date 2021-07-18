@@ -4,7 +4,7 @@ def count(substring, s):
     idx = 0
     count = 0
     while idx < len(s):
-        if s[idx::len(substring)] == substring:
+        if s[idx:idx+len(substring)] == substring:
             count += 1
         idx += 1
     return count
